@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+Disallow: https://dumugames.com/sign-in/admin/moula_el_bach
+Disallow: https://dumugames.com/admin/dashboard
+Disallow: https://dumugames.com/My-Account
+Disallow: https://dumugames.com/sign-in/verify
+Disallow: https://dumugames.com/payment/fail-payment
+Disallow: https://dumugames.com/payment/success-payment
+Disallow: https://dumugames.com/payment/process-payment
+Disallow: https://dumugames.com/Wholesaler-Orders
+Disallow: https://dumugames.com/all-admins
+Disallow: https://dumugames.com/all-users
+Disallow: https://dumugames.com/Profile
+Disallow: https://dumugames.com/Orders
+Disallow: https://dumugames.com/Wallet
+Disallow: https://dumugames.com/admin/dashboard/all-users
+Disallow: https://dumugames.com/My-Account/Wallet
+Disallow: https://dumugames.com/Cart
+Disallow: https://dumugames.com/cards
+
+Sitemap: https://dumugames.com/sitemap.xml

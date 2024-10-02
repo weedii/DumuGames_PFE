@@ -217,7 +217,7 @@ export const getCardsIndividuals = async (
     });
     await newOrder.save();
 
-    // now send email to the user taht contains cards info + pdf
+    // now send email to the user that contains cards info + pdf
     const filePath = await sendEmailOrder(userEmail, newOrder);
 
     // delete invoice file from server after sending it

@@ -41,10 +41,14 @@ export const checkOut = async (req, res, next) => {
         quantity: item.quantity,
       })),
 
-      metadata: { isUser: false },
+      metadata: {
+        isUser: "no",
+        userName,
+        userEmail,
+        items: JSON.stringify(items),
+        amount,
+      },
     });
-
-    getCardsIndividuals(userName, userEmail, items, amount);
 
     res.status(200).json({ success: true, session });
   } catch (error) {
@@ -108,10 +112,22 @@ export const stripeWebHook = async (req, res, next) => {
     );
 
     if (event.type === "checkout.session.completed") {
+      // send success response to stripe to not consider it as a failure then continue...
+      res.status(200).send("Received");
+
       const session = event.data.object;
       const metadata = session.metadata;
 
-      if (metadata.isUser) return;
+      // if not a wholesaler
+      if (metadata.isUser === "no") {
+        getCardsIndividuals(
+          metadata.userName,
+          metadata.userEmail,
+          JSON.parse(metadata.items),
+          Number(metadata.amount)
+        );
+        return;
+      }
 
       const userId = session.client_reference_id;
       const amount = session.amount_total / 100;

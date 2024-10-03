@@ -69,7 +69,7 @@ const Orders = () => {
               <button
                 className="text-blue-600 hover:underline"
                 onClick={() => {
-                  console.log(item);
+                  // console.log(item);
 
                   setSelectedOrder(item);
                   setShowModal(true);

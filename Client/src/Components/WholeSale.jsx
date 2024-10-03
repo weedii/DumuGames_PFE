@@ -69,7 +69,7 @@ const WholeSale = () => {
         // Create a unique public ID that incorporates the username
         const publicId = `${folderName}/${Math.random()
           .toString(36)
-          .substring(2, 15)}.jpg`; // Example: john_doe/12345abcde.jpg
+          .substring(2, 15)}.jpg`; // Example: john doe john@g.com/12345abcde.jpg
 
         const formDataa = new FormData();
         formDataa.append("file", identityImg);
@@ -108,12 +108,12 @@ const WholeSale = () => {
         // Create a unique public ID that incorporates the username
         const publicId = `${folderName}/${Math.random()
           .toString(36)
-          .substring(2, 15)}.jpg`; // Example: john_doe/12345abcde.jpg
+          .substring(2, 15)}.jpg`; // Example: john doe john@g.com/12345abcde.jpg
 
         const formDataa = new FormData();
-        formDataa.append("file", identitySelfie); // Assuming 'identityImg' is your image file object
-        formDataa.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET); // Replace with your Cloudinary upload preset
-        formDataa.append("public_id", publicId); // Add the username-based public ID
+        formDataa.append("file", identitySelfie);
+        formDataa.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET);
+        formDataa.append("public_id", publicId);
 
         setLoading(true);
         const res = await axios.post(

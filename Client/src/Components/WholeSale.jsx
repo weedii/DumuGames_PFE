@@ -128,7 +128,7 @@ const WholeSale = () => {
         };
         setFormData(updatedFormData);
         setLoading(false);
-        return updatedFormData; // Return updated form data
+        return updatedFormData;
       } else {
         return false;
       }

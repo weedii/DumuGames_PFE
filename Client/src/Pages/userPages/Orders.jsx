@@ -54,7 +54,7 @@ const Orders = () => {
     axios
       .get(`${API_URL}/api/user/get-orders`, { withCredentials: true })
       .then((res) => {
-        console.log(res);
+        // console.log(res);
 
         if (res.data.success) {
           const ordersData = res.data.orders.map((item, idx) => ({

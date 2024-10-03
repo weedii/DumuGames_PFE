@@ -75,7 +75,7 @@ const CheckOutWholesalers = () => {
       )
       .then((res) => {
         if (res.data.success) {
-          console.log(res.data.user);
+          // console.log(res.data.user);
 
           dispatch(updateUser(res.data.user));
           setShowModal(false);

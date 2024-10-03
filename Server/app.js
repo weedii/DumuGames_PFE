@@ -17,7 +17,6 @@ app.use(
     credentials: true,
   })
 );
-// app.set("trust proxy", 1);
 
 // separate this route here to not use express.json()
 app.post(

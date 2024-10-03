@@ -33,7 +33,6 @@ const SignInAdmin = () => {
       toast.error("Missing Fields!");
       return;
     }
-    console.log(formData);
 
     setLoading(true);
     axios

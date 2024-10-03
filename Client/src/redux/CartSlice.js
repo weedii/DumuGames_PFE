@@ -29,12 +29,7 @@ const cartSlice = createSlice({
         state.cartItems.push(tmpCart);
         toast.success(`${action.payload.type} added to cart!`);
       }
-      // state.totalQuantity = state.cartItems.length;
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      // localStorage.setItem(
-      //   "cartItemsQuantity",
-      //   JSON.stringify(state.totalQuantity)
-      // );
     },
 
     removeFromCart: (state, action) => {
@@ -48,12 +43,7 @@ const cartSlice = createSlice({
             item.region !== action.payload.region)
       );
       state.cartItems = nextCartItems;
-      // state.totalQuantity = state.cartItems.length;
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-      // localStorage.setItem(
-      //   "cartItemsQuantity",
-      //   JSON.stringify(state.totalQuantity)
-      // );
       toast(`${action.payload.type} removed from cart!`);
     },
 
@@ -66,7 +56,6 @@ const cartSlice = createSlice({
 
       if (state.cartItems[itemIndex].quantity > 1) {
         state.cartItems[itemIndex].quantity -= 1;
-        // state.totalQuantity = state.cartItems.length;
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       }
     },
@@ -83,7 +72,6 @@ const cartSlice = createSlice({
         state.cartItems[itemIndex].quantity < 5
       ) {
         state.cartItems[itemIndex].quantity += 1;
-        // state.totalQuantity = state.cartItems.length;
         localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
       }
     },

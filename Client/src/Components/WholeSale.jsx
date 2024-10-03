@@ -72,9 +72,9 @@ const WholeSale = () => {
           .substring(2, 15)}.jpg`; // Example: john_doe/12345abcde.jpg
 
         const formDataa = new FormData();
-        formDataa.append("file", identityImg); // Assuming 'identityImg' is your image file object
-        formDataa.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET); // Replace with your Cloudinary upload preset
-        formDataa.append("public_id", publicId); // Add the username-based public ID
+        formDataa.append("file", identityImg);
+        formDataa.append("upload_preset", import.meta.env.VITE_UPLOAD_PRESET);
+        formDataa.append("public_id", publicId);
 
         setLoading(true);
         const res = await axios.post(
